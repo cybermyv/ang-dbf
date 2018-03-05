@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from './../environments/environment';
-import { Http } from '@angular/http';
+import { Http, Response  } from '@angular/http';
 
 import { Record } from './record';
 import { Observable } from 'rxjs/Observable';
@@ -20,12 +20,8 @@ export class ApiService {
         return this.http
             .get(API_URL + '/main')
             .map((response) => {
-                const record = response.json();
-          //      console.log(record);
-                return record.map(record => {new Record(record);
-            //     console.log(Record);
-            // return record
-        });
+                const records = response.json();
+                return records.map((record) => new Record(record));
             })
             .catch(this.handleError);
     }

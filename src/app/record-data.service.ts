@@ -8,8 +8,7 @@ import { Observable } from 'rxjs/Observable';
 
 export class RecordDataService {
     constructor(
-        private api: ApiService
-    ) { }
+        private api: ApiService ) { }
 
     getAllRecords(): Observable<Record[]> {
         return this.api.getAllRecords();
