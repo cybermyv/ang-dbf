@@ -15,7 +15,7 @@ import { Record } from './record';
 export class AppComponent implements OnInit {
 
   records: Record[] = [];
-  title = 'dbf - парсер';
+  title = 'CRUD приложение';
 
   constructor(
     private recordDataService: RecordDataService) {
@@ -25,12 +25,30 @@ export class AppComponent implements OnInit {
     this.recordDataService
       .getAllRecords()
       .subscribe(
-        (records) => { 
-          
-           this.records = records;
-           console.log(this.records);
+        (records) => {
+
+          this.records = records;
+          console.log(this.records);
         }
       )
+  };
+
+
+  onAddRecord(record) {
+    this.recordDataService
+      .createRecord(record)
+      .subscribe(
+        (newRecord) => { this.records = this.records.concat(newRecord) });
+  };
+
+  //  onEditRecord
+
+  onRemoveRecord(record){
+    this.recordDataService
+    .removeRecord(record.id)
+    .subscribe(
+      (_) =>{ this.records = this.records.filter((r)=> r.id!==record.id)}
+    );
   }
 
 

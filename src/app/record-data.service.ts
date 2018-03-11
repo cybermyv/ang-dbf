@@ -14,4 +14,16 @@ export class RecordDataService {
         return this.api.getAllRecords();
     }
 
+    createRecord (record: Record): Observable<Record>{
+        return this.api.createRecord(record);
+    }
+
+    updateRecord (record: Record): Observable<Record>{
+        return this.api.updateRecord(record);
+    }
+
+    removeRecord (recordId: number): Observable<Record>{
+        return this.api.removeRecord(recordId);
+    }
+
 }

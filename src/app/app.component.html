@@ -1,13 +1,16 @@
-<!--The content below is only a placeholder and can be replaced.-->
+
 <section class="Record">
-  <header class="header">
-    <h1>{{title}}</h1>
-  </header>
-  <section class="main" >
+  <crud-header (add)="onAddRecord($event)"></crud-header>
+
+  <crud-list
+   [records]="records"
+   (edit)="onEditRecord($event)"
+   (remove)="onRemoveRecord($event)"
+   ></crud-list>
+
+  <!-- <section class="main" >
     <ul class="records-list">
-      <li *ngFor="let record of records; let i = index ">{{i+1}} - {{record.NORMDOCID}}</li>
-    </ul>
+      <li *ngFor="let record of records; let i = index ">{{i+1}} - {{record.id}} - {{record.login}}</li>
+    </ul> -->
 
-
-  </section>
 </section>

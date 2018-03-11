@@ -18,17 +18,47 @@ export class ApiService {
 
     public getAllRecords(): Observable<Record[]> {
         return this.http
-            .get(API_URL + '/main')
+            .get(API_URL + '/users')
             .map((response) => {
                 const records = response.json();
                 return records.map((record) => new Record(record));
             })
             .catch(this.handleError);
-    }
+    };
+
+    public createRecord(record: Record):Observable<Record>{
+        return this.http
+        .post(API_URL+'/users', record)
+        .map(response => {
+            //return new Record(response.json())
+            return new Record(record)
+        })
+        .catch(this.handleError);
+
+    };
+
+    public updateRecord(record: Record): Observable<Record> {
+        return this.http
+        .put(API_URL + '/users/' + record.id, record)
+        .map(response =>{
+            return new Record(record);
+        })
+        .catch(this.handleError);
+    };
+
+
+    public removeRecord(recordId: number): Observable<null>{
+        return this.http
+        .delete(API_URL + '/users/'+ recordId)
+        .map(response => null)
+        .catch(this.handleError);
+    };
 
     private handleError(error: Response | any) {
         console.error('ApiService::handleError', error);
         return Observable.throw(error);
-    }
+    };
+
+    
+
 }
-//.head('Access-Control-Allow-Origin', '*')
