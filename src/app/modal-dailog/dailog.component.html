@@ -1,0 +1,17 @@
+<div class="modal-dialog">
+    <div class="modal-dialog-content">
+        <div class="modal-dialog-header">
+            <span class="close" (click)="closeModal()">&times;</span>
+            <h2>
+                <ng-content select="[modal-dialog-header]"></ng-content>
+            </h2>
+        </div>
+        <div class="modal-dialog-body">
+            <ng-content select="[modal-dialog-body]"></ng-content>
+        </div>
+        <div class="modal-dialog-footer">
+            
+            <ng-content select="[modal-dialog-footer]"></ng-content>
+        </div>
+    </div>
+</div>

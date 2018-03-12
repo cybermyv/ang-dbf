@@ -1,0 +1,6 @@
+<section class="Record">
+    <crud-header (add)="onAddRecord($event)"></crud-header>
+
+    <crud-list [records]="records" (edit)="onEditRecord($event)" (remove)="onRemoveRecord($event)"></crud-list>
+
+</section>

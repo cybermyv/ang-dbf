@@ -8,22 +8,32 @@ import { RecordDataService } from './record-data.service';
 import { ApiService } from './api.service';
 
 import { AppComponent } from './app.component';
+import { UsersComponent } from './users/users.component';
 import { HeaderComponent } from './crud-header/header.component';
 import { ListComponent } from './crud-list/list.component';
 import { ListItemComponent } from './crud-list-item/list-item.component';
+import { ModalDialog } from './modal-dailog/dailog.component';
+import{AddComponent}   from './add-record/add.component'
+
+import { AppRoutingModule} from './app.routing';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    UsersComponent,
     HeaderComponent,
     ListComponent,
-    ListItemComponent
+    ListItemComponent,
+    ModalDialog,
+    AddComponent
   ],
   imports: [
-    BrowserModule,
+  
+  BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [RecordDataService, ApiService],
   bootstrap: [AppComponent]

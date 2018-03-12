@@ -1,4 +1,13 @@
+<ul>
+    <li>
+      <a [routerLink]="[ {outlets: { modal: 'users/add' } } ]">Login</a>
+    </li>
+  </ul>
 
+<router-outlet></router-outlet>
+<router-outlet name="modal"></router-outlet>
+
+<!-- 
 <section class="Record">
   <crud-header (add)="onAddRecord($event)"></crud-header>
 
@@ -8,9 +17,6 @@
    (remove)="onRemoveRecord($event)"
    ></crud-list>
 
-  <!-- <section class="main" >
-    <ul class="records-list">
-      <li *ngFor="let record of records; let i = index ">{{i+1}} - {{record.id}} - {{record.login}}</li>
-    </ul> -->
 
-</section>
+</section> -->
+

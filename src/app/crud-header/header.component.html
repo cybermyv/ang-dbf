@@ -1,4 +1,10 @@
 <header class="header">
     <h1>CRUD = приложение</h1>
+ <ul>
+     <li>   <a [routerLink]="[ {outlets: { modal: 'users/add' } } ]">Добавить1</a></li>
+        <li> <a routerLink="add">Добавить2</a></li>
+ </ul>
     <input class="new-record" placeholder="Новая запись" [(ngModel)]="newRecord.login" (keyup.enter)="addRecord()">
 </header>
+
+<!-- <router-outlet name="modal"></router-outlet> -->
