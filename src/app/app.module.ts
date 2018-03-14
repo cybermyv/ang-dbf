@@ -13,9 +13,10 @@ import { HeaderComponent } from './crud-header/header.component';
 import { ListComponent } from './crud-list/list.component';
 import { ListItemComponent } from './crud-list-item/list-item.component';
 import { ModalDialog } from './modal-dailog/dailog.component';
-import{AddComponent}   from './add-record/add.component'
+import { AddComponent } from './add-record/add.component'
+import { delConfirm } from './delConfirm/del.confirm';
 
-import { AppRoutingModule} from './app.routing';
+import { AppRoutingModule } from './app.routing';
 
 
 @NgModule({
@@ -26,11 +27,12 @@ import { AppRoutingModule} from './app.routing';
     ListComponent,
     ListItemComponent,
     ModalDialog,
-    AddComponent
+    AddComponent,
+    delConfirm
   ],
   imports: [
-  
-  BrowserModule,
+
+    BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule

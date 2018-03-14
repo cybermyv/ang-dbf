@@ -1,22 +1,3 @@
-<ul>
-    <li>
-      <a [routerLink]="[ {outlets: { modal: 'users/add' } } ]">Login</a>
-    </li>
-  </ul>
 
-<router-outlet></router-outlet>
+<router-outlet> </router-outlet>
 <router-outlet name="modal"></router-outlet>
-
-<!-- 
-<section class="Record">
-  <crud-header (add)="onAddRecord($event)"></crud-header>
-
-  <crud-list
-   [records]="records"
-   (edit)="onEditRecord($event)"
-   (remove)="onRemoveRecord($event)"
-   ></crud-list>
-
-
-</section> -->
-

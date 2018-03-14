@@ -2,4 +2,5 @@
     <label>{{record.id}} - {{record.login}} - {{record.pass}} - {{record.comment}}</label>
     <button class="edit" (click)="editRecord(record)">EDIT</button>
     <button class="remove" (click)="removeRecord(record)">DEL</button>
+    <!-- <a [routerLink]="['', {outlets: { modal: 'users/del' } } ]">Удалить</a> -->
 </div>

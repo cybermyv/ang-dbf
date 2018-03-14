@@ -1,10 +1,18 @@
-<header class="header">
+<div class="header">
     <h1>CRUD = приложение</h1>
- <ul>
-     <li>   <a [routerLink]="[ {outlets: { modal: 'users/add' } } ]">Добавить1</a></li>
-        <li> <a routerLink="add">Добавить2</a></li>
- </ul>
-    <input class="new-record" placeholder="Новая запись" [(ngModel)]="newRecord.login" (keyup.enter)="addRecord()">
-</header>
+    <ul>
+        <li>
+            <!-- <a [routerLink]="['/users/add']">Добавить</a> -->
+            <a [routerLink]="['', {outlets: { modal: 'users/add' }} ]">Добавить</a>
+        </li>
+
+    </ul>
+    <!-- <input class="new-record" placeholder="Новая запись" [(ngModel)]="newRecord.login" (keyup.enter)="addRecord()"> -->
+    
+    <!-- <input class="new-record" placeholder="логин" [(ngModel)]="newRecord.login">
+    <input class="new-record" placeholder="пароль" [(ngModel)]="newRecord.pass">
+    <input class="new-record" placeholder="комментарий" [(ngModel)]="newRecord.comment" (keyup.enter)="headerAddRecord()"> -->
+    
+    </div>
 
 <!-- <router-outlet name="modal"></router-outlet> -->

@@ -1,6 +1,20 @@
+<nav>
+    <ul>
+      <li>
+        <!-- <a [routerLink]="['/users/add']">Добавить</a> -->
+        <a [routerLink]="['', {outlets: { modal: 'users/add' }} ]">Добавить</a>
+      </li>
+  
+    </ul>
+  </nav>
+
 <section class="Record">
-    <crud-header (add)="onAddRecord($event)"></crud-header>
+    <!-- <crud-header (add)="onAddRecord($event)"> </crud-header> -->
+    <!-- <crud-header (add)="onAddRecord($event)"> </crud-header> -->
+    <!-- <add-record (add)="onAddRecord($event)"></add-record> -->
 
     <crud-list [records]="records" (edit)="onEditRecord($event)" (remove)="onRemoveRecord($event)"></crud-list>
 
 </section>
+
+

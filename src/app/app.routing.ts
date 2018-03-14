@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { UsersComponent } from './users/users.component';
+import { HeaderComponent } from './crud-header/header.component';
 import { ModalDialog } from './modal-dailog/dailog.component';
 import { AddComponent } from './add-record/add.component';
-import { HeaderComponent } from './crud-header/header.component';
+import { delConfirm } from './delConfirm/del.confirm';
+
 
 const routes: Routes = [
     {
@@ -14,19 +16,28 @@ const routes: Routes = [
     },
     {
         path: 'users',
-        component: UsersComponent
+        component: UsersComponent,
+        
+
+
     },
     {
-        path:'users/add',
-        component: AddComponent, 
+        path: 'users/add',
+        component: ModalDialog,
+        outlet: 'modal'
+        
+    },
+
+    {
+        path: 'users/del',
+        component: delConfirm,
         outlet: 'modal'
     }
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
-    
-exports: [RouterModule],
+    exports: [RouterModule],
     providers: []
 })
 export class AppRoutingModule { }

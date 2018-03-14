@@ -1,8 +1,12 @@
 <modal-dialog>
-    <div modal-dialog-header>Login</div>
-    <div modal-dialog-body>Login body</div>
+    <div modal-dialog-header>Добавление новой записи</div>
+    <div modal-dialog-body > 
+        <input class="new-record" placeholder="логин" [(ngModel)]="newRecord.login" >
+        <input class="new-record" placeholder="пароль" [(ngModel)]="newRecord.pass" >
+        <input class="new-record" placeholder="комментарий" [(ngModel)]="newRecord.comment">
+    </div>
     <div modal-dialog-footer>
-      Footer
-        <button (click)="modal.closeModal({submitted: true})">Submit</button>
+        <button (click)="addRecord()">Добавить</button>
+         
     </div>
 </modal-dialog>
