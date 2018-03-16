@@ -17,22 +17,14 @@ const routes: Routes = [
     {
         path: 'users',
         component: UsersComponent,
-        
-
-
     },
     {
         path: 'users/add',
         component: ModalDialog,
         outlet: 'modal'
-        
-    },
-
-    {
-        path: 'users/del',
-        component: delConfirm,
-        outlet: 'modal'
+       
     }
+
 ];
 
 @NgModule({

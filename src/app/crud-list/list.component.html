@@ -1,6 +1,6 @@
 <section class="main-list">
     <ul class="record-list">
-        <li *ngFor="let record of records">
+        <li *ngFor="let record of recordDataService.records.getValue()">
             <crud-list-item [record]="record" (edit)="onEditRecord($event)" (remove)="onRemoveRecord($event)"></crud-list-item>
         </li>
     </ul>

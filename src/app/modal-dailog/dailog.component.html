@@ -1,4 +1,4 @@
-<div class="modal-dialog" (add)="onAddRecord($event)">
+<div class="modal-dialog">
     <div class="modal-dialog-content">
         <div class="modal-dialog-header">
             <span class="close" (click)="closeModal()">&times;</span>
@@ -10,7 +10,7 @@
             <input class="new-record" placeholder="комментарий" [(ngModel)]="newRecord.comment">
         </div>
         <div class="modal-dialog-footer">
-            <button (click)="addRecord(newRecord)">Добавить</button>
+            <button (click)="addRecord()">Добавить</button>
         </div>
     </div>
 </div>

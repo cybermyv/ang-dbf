@@ -18,28 +18,27 @@ export class UsersComponent implements OnInit {
     title = 'CRUD приложение';
 
     constructor(
-        private recordDataService: RecordDataService) {
+        public recordDataService: RecordDataService) {
     }
 
     public ngOnInit() {
         this.recordDataService
             .getAllRecords()
             .subscribe(
-                (records) => {
-
-                    this.records = records;
-                    // console.log(this.records);
-                }
+                // (records) => {
+                //     this.records = records;
+                //     // console.log(this.records);
+                // }
             )
     };
 
 
-    onAddRecord(record) {
-        this.recordDataService
-            .createRecord(record)
-            .subscribe(
-                (newRecord) => { this.records = this.records.concat(newRecord) });
-    };
+    // onAddRecord(record) {
+    //     this.recordDataService
+    //         .createRecord(record)
+    //         .subscribe(
+    //             (newRecord) => { this.records = this.records.concat(newRecord) });
+    // };
 
     //  onEditRecord
 

@@ -3,7 +3,7 @@ import { environment } from './../environments/environment';
 import { Http, Response  } from '@angular/http';
 
 import { Record } from './record';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from "rxjs/Rx";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -16,13 +16,15 @@ export class ApiService {
 
 
 
-    public getAllRecords(): Observable<Record[]> {
+    public getAllRecords(): Observable<any> {
         return this.http
             .get(API_URL + '/users')
             .map((response) => {
-                const records = response.json();
-                return records.map((record) => new Record(record));
+                // const records = response.json();
+                // return records.map((record) => new Record(record));
+                return response.json();
             })
+            
             .catch(this.handleError);
     };
 

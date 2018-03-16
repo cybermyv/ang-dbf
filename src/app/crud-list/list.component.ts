@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RecordDataService } from '../record-data.service';
 import { Record } from '../record';
 
 @Component({
@@ -8,8 +9,8 @@ import { Record } from '../record';
 })
 
 export class ListComponent {
-    @Input()
-    records: Record[];
+    // @Input()
+    // records: Record[];
 
     @Output()
     remove: EventEmitter<Record> = new EventEmitter();
@@ -17,7 +18,7 @@ export class ListComponent {
     @Output()
     edit: EventEmitter<Record> = new EventEmitter();
 
-    constructor() { }
+    constructor( public recordDataService: RecordDataService ) { }
 
     onEditRecord(record: Record) {
         this.edit.emit(record);
